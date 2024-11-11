@@ -218,12 +218,12 @@ Previously, she obtained her Master's degree from Harbin Institute of Technology
         <div class="main-news-container">
             <h5 class="subtitle">News</h5>
             <ul>
-                <li style="font-weight:600">I am on job market 2024-2025.</li>
+                <!-- <li style="font-weight:600">I am on job market 2024-2025.</li>
                 <li>
                     To junior PhD/master/undergraduate students: if you would like to chat about life, career plan, or research ideas related to Robotics, feel free to email me to schedule a meeting.
                     I will dedicate 30 mins every week for such meetings. I encourage students from <i><a href="javascript:$('#popover-underrepresented').slideToggle();">underrepresented groups</a></i> to reach out and will prioritize these meetings.
                     <p id="popover-underrepresented" style="display:none;margin:1rem 0"><i>Underrepresented groups</i>: including but not limited to gender/racial/ethnic minority groups.</p>
-                </li>
+                </li> -->
                 <li>I got the National Natural Science Foundation of China, Basic Research Program for Young Students (Doctoral Students) (Grant No. 523B2039).</li>
                 <li>I was granted with <a href="https://robotx.ethz.ch/education/robotics-research-fellowship/research-fellows.html">2023 ETH Robotics Research Fellowship</a>.</li>
                 <li>I got the National Scholarship for Graduate Students.</li>
@@ -235,12 +235,101 @@ Previously, she obtained her Master's degree from Harbin Institute of Technology
 
             <h5 class="subtitle" style="margin-top:30px">Research Highlights</h5>
             <p>
-            My long-term research goal is to build machines that can continually learn concepts (<i>e.g.,</i> properties, relations, skills, rules and algorithms) from their experiences and apply them for reasoning and planning in the physical world. The central theme of my research is to decompose the learning problem into learning a vocabulary of <i>neuro-symbolic concepts</i>. The symbolic part describes their structures and how different concepts can be composed; the neural part handles grounding in perception and physics. I leverage structures to make learning more data-efficient, more compositionally generalizable, and also inference and planning faster.
-
-            <!-- (<i>e.g.,</i> <a class="highlight">red</a> is a unary function that returns Booleans, actions have Hoare-logic-like preconditions and postconditions), and their structures (<i>e.g.,</i> a push action only changes the pose of one object if being collision-free, a wiping policy has for-loops) -->
+            <!-- My long-term research goal is to build machines that can continually learn concepts (<i>e.g.,</i> properties, relations, skills, rules and algorithms) from their experiences and apply them for reasoning and planning in the physical world. The central theme of my research is to decompose the learning problem into learning a vocabulary of <i>neuro-symbolic concepts</i>. The symbolic part describes their structures and how different concepts can be composed; the neural part handles grounding in perception and physics. I leverage structures to make learning more data-efficient, more compositionally generalizable, and also inference and planning faster. -->
+            My research topic lies at the intersection of Robotics, terramechanics, and computer vision, specifically, focusing on autonomous, agile navigation, and scientific exploration for space robots. Her current research topic is integrating environmental physical property perception into robot’s locomotion and navigation to handle slippery and soft deformable terrains.
             </p>
 
 <section class="overview" id="overview">
+  <div class="main thick">
+    <b>Physical Environment Representation and Perception</b>
+    <p>How should we represent physical environment in a compact, unified, and comprehensive manner?</p>
+    <p>How to efficiently perceive the physical properties for different robots under various environments?</p>
+    <p><a href="javascript:$('#overview-representation ul.content').slideToggle();">Show/Hide Work on Representations</a></p>
+  </div>
+  <ul class="row" id="overview-representation">
+    <li class="page stretch join up down">
+      <div class="thin">
+        <b>Map Structures</b>
+        <ul class="content hide">
+          <li><i>Terramechanical Map</i>: <a target="_blank" href="https://ieeexplore.ieee.org/document/8967984">[Geometry and Mechanical Property Map]</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="page stretch join up down">
+      <div class="thin">
+        <b>Visual Perception</b>
+        <ul class="content hide">
+          <li><i>Semantic-Guided Perception</i>:
+            <br />
+            <a href="https://arxiv.org/abs/2011.01872">[Mechanical perception for Wheeled Robots]</a>
+          </li>
+          <li><i>Multi-modal Learning</i>:
+            <br />
+            <a href="https://ieeexplore.ieee.org/document/10669238">[Physical Perception for Quadruped Robots]</a>
+            <br />
+            <a href="https://academic.oup.com/nsr/article/10/5/nwad045/7051244">[Physical Perception for Hexapod Robots]</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="page stretch join up down">
+      <div class="thin">
+        <b>Proprioception</b>
+        <ul class="content hide">
+          <li><i>Foot-Terrain Interaction Based</i>: 
+            <br />
+            <a href="https://ieeexplore.ieee.org/document/9739835">[Pressing and Rubbing to Perceive]</a>
+          </li>
+          <li><i>Wheel-Terrain Interaction Based</i>: 
+            <br />
+            <a href="https://hkxb.buaa.edu.cn/CN/lexeme/showArticleByLexeme.do?articleID=17992">[Rotate Wheels to Perceive]</a>
+          </li>
+          <li><i>Active Perception Based</i>: 
+            <br />
+            <a>[Active Slip Ratio Regulation]</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+  <div class="main thick">
+    <b>Mapping, Planning and Navigation Algorithms</b>
+    <p>How can we efficiently build a map for downstream applications?</p>
+    <p>How can we leverage the physical understanding to plan path or navigate robots wiser and safer?</p>
+    <p><a href="javascript:$('#overview-algorithm ul.content').slideToggle();">Show/Hide Work on Algorithms</a></p>
+  </div>
+  <ul class="row" id="overview-algorithm">
+    <li class="page join down">
+      <div class="thin">
+        <b>Multi-Characterisitc Mapping</b>
+        <ul class="content hide">
+            <li><i>Terramechnical Mapping</i>: 
+                <br />
+                <a href="https://ieeexplore.ieee.org/document/8967984">[Terramechanical Mapping for Planetary Rovers]</a>
+            </li>
+        </ul>
+      </div>
+    </li>
+    <li class="page join down">
+      <div class="thin">
+        <b>Path Planning</b>
+        <ul class="content hide">
+            <li><i>Explicit Planning</i>: 
+                <br />
+                <a href="https://ieeexplore.ieee.org/document/8967984">[Path Planning for Hexapod Robots]</a>
+                <br />
+                <a>[Path Planning for Planetary Rovers]</a>
+            </li>
+            <li><i>End-to-End Navigation</i>: 
+                <br />
+                <a href="https://ieeexplore.ieee.org/document/10138604">[End-to-End navigation for Planetary Rovers]</a>
+            </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</section>
+<!-- <section class="overview" id="overview">
   <div class="main thick">
     <b>Neuro-Symbolic Concepts: Representations</b>
     <p>How should we represent various types of concepts?</p>
@@ -257,12 +346,6 @@ Previously, she obtained her Master's degree from Harbin Institute of Technology
           <li><i>Logographic Structures</i>:<br /><a target="_blank" href="https://arxiv.org/pdf/2405.06906">[Logographic Library Learning]</a></li>
         </ul>
       </div>
-      <!--div class="thin" style="margin-top:20px;">
-        <b>Language Pragmatics</b>
-        <ul class="content hide">
-          <li><i>Goal Interpretation</i>: <a target="_blank" href="https://sites.google.com/view/hand-me-that/overview">[HandMeThat]</a></li>
-        </ul>
-      </div-->
     </li>
     <li class="page stretch join up down">
       <div class="thin">
@@ -274,7 +357,6 @@ Previously, she obtained her Master's degree from Harbin Institute of Technology
           <li><i>Metaconcepts</i>:<br /><a target="_blank" href="http://vcml.csail.mit.edu">[Visual Concept & Metaconcept]</a></li>
           <li class="level-2">+ <i>Continual Learning</i>: <a target="_blank" href="https://people.csail.mit.edu/jerrymei/projects/falcon/">[FALCON]</a></li>
           <li><i>Physical Events and Causality</i>: <a target="_blank" href="http://dcl.csail.mit.edu/">[Dynamic Concept Learning]</a>, <a target="_blank" href="https://sites.google.com/stanford.edu/clevrer-humans">[CLEVRER-Humans]</a></li>
-          <!-- <li><i>Temporal-Logic Events</i>:<br /><a target="_blank" href="http://toqnet.csail.mit.edu/">[Temporal and Object Quantification]</a></li> -->
           <li><i>Abstract Concepts</i>: <a target="_blank" href="https://stanford.edu/~joycj/projects/abstractions_2024.html">[Visual Abstraction]</a></li>
           <li><i>Programmatic Image Representations</i>:<br /><a target="_blank" href="http://pgim.csail.mit.edu/">[Program-Guided Image Manipulators]</a>
           <li class="level-2">+ <i>Perspective</i>: <a target="_blank" href="http://p3i.csail.mit.edu/">[P3I]</a></li>
@@ -337,7 +419,7 @@ Previously, she obtained her Master's degree from Harbin Institute of Technology
       </div>
     </li>
   </ul>
-</section>
+</section> -->
 
         </div>
     </div>
