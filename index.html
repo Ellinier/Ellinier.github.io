@@ -224,6 +224,7 @@ Previously, she obtained her Master's degree from Harbin Institute of Technology
                     I will dedicate 30 mins every week for such meetings. I encourage students from <i><a href="javascript:$('#popover-underrepresented').slideToggle();">underrepresented groups</a></i> to reach out and will prioritize these meetings.
                     <p id="popover-underrepresented" style="display:none;margin:1rem 0"><i>Underrepresented groups</i>: including but not limited to gender/racial/ethnic minority groups.</p>
                 </li> -->
+                <li>I'm organizing the workshop for IROS 2025, <a target="_blank" href="https://www.wheeledleggedrobotics.com/">The Future of Hybrid Mobility: Innovations in Wheeled-Legged Robots</a>. Welcome to submit your paper or join the competition.</li>
                 <li>I got the funding supported by Self-Planned Task of State Key Laboratory of Robotics and Systems (HIT) (Grant No. SKLRS202503C).</li>
                 <li>I was awarded the Excellent Doctoral Thesis Award of Harbin Institute of Technology.</li>
                 <li>I got the National Natural Science Foundation of China, Basic Research Program for Young Students (Doctoral Students) (Grant No. 523B2039).</li>
@@ -253,7 +254,14 @@ Previously, she obtained her Master's degree from Harbin Institute of Technology
       <div class="thin">
         <b>Map Structures</b>
         <ul class="content hide">
-          <li><i>Terramechanical Map</i>: <a target="_blank" href="https://ieeexplore.ieee.org/document/8967984">[Geometry and Mechanical Property Map]</a></li>
+          <li><i>Terramechanical Map</i>: 
+            <br />
+            <a target="_blank" href="https://ieeexplore.ieee.org/document/8967984">[Geometry and Mechanical Property Map]</a>
+          </li>
+          <li><i>Open Scene Graph</i>: 
+            <!-- <br />
+            <a target="_blank" href="https://ieeexplore.ieee.org/document/8967984">[Geometry and Mechanical Property Map]</a> -->
+          </li>
         </ul>
       </div>
     </li>
@@ -519,10 +527,11 @@ Previously, she obtained her Master's degree from Harbin Institute of Technology
             <p class="subtitle-aux"><span class="bold">Topics:</span>
                 <a href="#topic-planetary-exploration" onClick="return publicationByTopicSpecific(this)" data-topic="planetary-exploration">Planetary Exploration</a> /
                 <a href="#topic-physical-understanding" onClick="return publicationByTopicSpecific(this)" data-topic="physical-understanding">Physical Scene Understanding</a> /
-                <a href="#topic-simulation" onClick="return publicationByTopicSpecific(this)" data-topic="simulation">High-Fidelity Simulaton</a> /
+                <a href="#topic-simulation" onClick="return publicationByTopicSpecific(this)" data-topic="simulation">High-Fidelity Simulation</a> /
                 <a href="#topic-planning" onClick="return publicationByTopicSpecific(this)" data-topic="planning">Planning</a> /
+                <a href="#topic-terramechanics" onClick="return publicationByTopicSpecific(this)" data-topic="navigation">Navigation</a> /
+                <a href="#topic-locomotion" onClick="return publicationByTopicSpecific(this)" data-topic="locomotion">Locomotion</a> /
                 <a href="#topic-terramechanics" onClick="return publicationByTopicSpecific(this)" data-topic="terramechanics">Terramechanics</a>
-                <a href="#topic-locomotion" onClick="return publicationByTopicSpecific(this)" data-topic="locomotion">Locomotion</a>
             </p>
             <!-- <p class="subtitle-aux"><span class="bold">Platforms:</span>
                 <a href="#platform-planetary-rovers" onClick="return publicationByPlatformSpecific(this)" data-platform="planetary-rovers">Planetary Rovers</a> /
@@ -532,7 +541,7 @@ Previously, she obtained her Master's degree from Harbin Institute of Technology
                 <span class="note">(*: indicates corresponding author. †: indicates equal contribution.)</span>
             </p> -->
             <div id="pub-card-container" class="activated hide">
-                <div class="pub-card" data-topic="navigation" data-year="2025" data-selected="true" data-platform="planetary-rovers">
+                <div class="pub-card" data-topic="navigation" data-year="2025" data-selected="false" data-platform="planetary-rovers">
                     <div class="row">
                         <div class="col-l col-xs-12 col-lg-3">
                             <img src="data/projects/multimode_navigation_framework.png" />
@@ -701,7 +710,7 @@ Previously, she obtained her Master's degree from Harbin Institute of Technology
                         </div>
                     </div>
                 </div>
-                <div class="pub-card" data-topic="planning" data-year="2023" data-selected="true" data-platform="planetary-rovers">
+                <div class="pub-card" data-topic="navigation" data-year="2023" data-selected="true" data-platform="planetary-rovers">
                     <div class="row">
                         <div class="col-l col-xs-12 col-lg-3">
                             <img src="data/projects/end_to_end_rover_navigation.svg" />
@@ -1117,7 +1126,7 @@ Previously, she obtained her Master's degree from Harbin Institute of Technology
                 <div class="pub-card" data-topic="physical-understanding" data-year="2019" data-selected="false" data-platform="planetary-rovers">
                     <div class="row">
                         <div class="col-l col-xs-12 col-lg-3">
-                            <img src="data/projects/embodied-agent-interface.png" />
+                            <img src="data/projects/terramechanical_mapping.png" />
                         </div>
                         <div class="col-r col-xs-12 col-lg-9">
                             <div class="pub-card-body">
@@ -1137,7 +1146,7 @@ Previously, she obtained her Master's degree from Harbin Institute of Technology
                 <div class="pub-card" data-topic="terramechanics" data-year="2018" data-selected="false" data-platform="planetary-rovers">
                     <div class="row">
                         <div class="col-l col-xs-12 col-lg-3">
-                            <img src="data/projects/embodied-agent-interface.png" />
+                            <img src="data/projects/terramechanical_mapping.png" />
                         </div>
                         <div class="col-r col-xs-12 col-lg-9">
                             <div class="pub-card-body">
@@ -1482,6 +1491,10 @@ $(function() {
     for (var topicId = 0; topicId < allTopicsLink.length; topicId++) {
         allTopics.push({name: $(allTopicsLink[topicId]).data("topic"), title: $(allTopicsLink[topicId]).html()});
     }
+    // allPlatforms = [];
+    // for (var platformId = 0; platformId < allPlatformsLink.length; platformId++) {
+    //     allPlatforms.push({name: $(allTopicsLink[platformId]).data("platform"), title: $(allTopicsLink[platformId]).html()});
+    // }
 
     $("#publication-by-selected").click();
     // $("#publication-by-date").click();
