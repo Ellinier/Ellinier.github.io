@@ -533,13 +533,13 @@ Previously, she obtained her Master's degree from Harbin Institute of Technology
                 <a href="#topic-locomotion" onClick="return publicationByTopicSpecific(this)" data-topic="locomotion">Locomotion</a> /
                 <a href="#topic-terramechanics" onClick="return publicationByTopicSpecific(this)" data-topic="terramechanics">Terramechanics</a>
             </p>
-            <!-- <p class="subtitle-aux"><span class="bold">Platforms:</span>
+            <p class="subtitle-platform"><span class="bold">Platforms:</span>
                 <a href="#platform-planetary-rovers" onClick="return publicationByPlatformSpecific(this)" data-platform="planetary-rovers">Planetary Rovers</a> /
                 <a href="#platform-quadruped-robots" onClick="return publicationByPlatformSpecific(this)" data-platform="quadruped-robots">Quadruped Robots</a> /
                 <a href="#platform-hexapod-robots" onClick="return publicationByPlatformSpecific(this)" data-platform="hexapod-robots">Hexapod Robots</a>
                 <br />
                 <span class="note">(*: indicates corresponding author. †: indicates equal contribution.)</span>
-            </p> -->
+            </p>
             <div id="pub-card-container" class="activated hide">
                 <div class="pub-card" data-topic="navigation" data-year="2025" data-selected="false" data-platform="planetary-rovers">
                     <div class="row">
@@ -1323,63 +1323,64 @@ function publicationByTopicSpecific(a) {
     return false;
 }
 
-// function publicationByPlatformInner() {
-//     var a = $("#publication-by-platform")
-//     if (a.hasClass("activated")) {
-//         return ;
-//     }
-//     $("#pub-container .subtitle a").removeClass("activated");
-//     a.addClass("activated");
+function publicationByPlatformInner() {
+    var a = $("#publication-by-platform");
+    if (a.hasClass("activated")) {
+        return;
+    }
+    $("#pub-container .subtitle a").removeClass("activated");
+    a.addClass("activated");
 
-//     $("#pub-card-container").html("");
-//     for (var platformId in allPlatforms) {
-//         var platform = allPlatforms[platformId].name;
-//         var platformTitle = allPlatforms[platformId].title;
-//         $("#pub-card-container").append($("<h5 id='platform-" + platform + "'>" + platformTitle + "</h5>"));
-//         for (var pubId = 0; pubId < allPublications.length; pubId++) {
-//             var pub = $(allPublications[pubId]);
-//             if (pub.data("platform").indexOf(platform) != -1) {
-//                 $("#pub-card-container").append(pub);
-//             }
-//         }
-//     }
-// }
+    $("#pub-card-container").html("");
+    for (var platformId in allPlatforms) {
+        var platform = allPlatforms[platformId].name;
+        var platformTitle = allPlatforms[platformId].title;
+        // var platformTitle = platform.split("-").map(function (a) { return a[0].toUpperCase() + a.substr(1).toLowerCase(); }).join(" ");
+        $("#pub-card-container").append($("<h5 id='platform-" + platform + "'>" + platformTitle + "</h5>"));
+        for (var pubId = 0; pubId < allPublications.length; pubId++) {
+            var pub = $(allPublications[pubId]);
+            if (pub.data("platform").indexOf(platform) != -1) {
+                $("#pub-card-container").append(pub);
+            }
+        }
+    }
+}
 
-// function publicationByPlatformSpecificInner(a) {
-//     if ($(a).hasClass("activated")) {
-//         return false;
-//     }
+function publicationByPlatformSpecificInner(a) {
+    if ($(a).hasClass("activated")) {
+        return false;
+    }
 
-//     $("#pub-container .subtitle-aux a").removeClass("activated");
-//     $(a).addClass("activated");
-// }
+    $("#pub-container .subtitle-platform a").removeClass("activated");
+    $(a).addClass("activated");
+}
 
-// function publicationByPlatform() {
-//     publicationByPlatformInner();
-//     publicationByPlatformSpecificInner($("#pub-container .subtitle-aux a:first"));
-//     playAllVideos();
-//     return true;
-// }
+function publicationByPlatform() {
+    publicationByPlatformInner();
+    publicationByPlatformSpecificInner($("#pub-container .subtitle-platform a:first"));
+    playAllVideos();
+    return true;
+}
 
-// function publicationByPlatformSpecific(a) {
-//     publicationByPlatformInner();
-//     publicationByPlatformSpecificInner(a);
+function publicationByPlatformSpecific(a) {
+    publicationByPlatformInner();
+    publicationByPlatformSpecificInner(a);
 
-//     var hash = a.hash;
-//     $(hash).prop('id', hash.substr(1) + '-noscroll');
-//     window.location.hash = hash;
-//     $(hash + '-noscroll').prop('id', hash.substr(1));
+    var hash = a.hash;
+    $(hash).prop('id', hash.substr(1) + '-noscroll');
+    window.location.hash = hash;
+    $(hash + '-noscroll').prop('id', hash.substr(1));
 
-//     if (!$(hash).isInViewport()) {
-//         $('html, body').animate({
-//             scrollTop: $(hash).offset().top
-//         }, 1000, function(){
-//         });
-//     }
+    if (!$(hash).isInViewport()) {
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 1000, function(){
+        });
+    }
 
-//     playAllVideos();
-//     return false;
-// }
+    playAllVideos();
+    return false;
+}
 
 $(function() {
     getRealSize = function(bgImg) {
@@ -1491,10 +1492,14 @@ $(function() {
     for (var topicId = 0; topicId < allTopicsLink.length; topicId++) {
         allTopics.push({name: $(allTopicsLink[topicId]).data("topic"), title: $(allTopicsLink[topicId]).html()});
     }
-    // allPlatforms = [];
-    // for (var platformId = 0; platformId < allPlatformsLink.length; platformId++) {
-    //     allPlatforms.push({name: $(allTopicsLink[platformId]).data("platform"), title: $(allTopicsLink[platformId]).html()});
-    // }
+    allPlatformsLink = $("#pub-container .subtitle-platform a");
+    allPlatforms = [];
+    for (var platformId = 0; platformId < allPlatformsLink.length; platformId++) {
+        allPlatforms.push({
+            name: $(allPlatformsLink[platformId]).data("platform"),
+            title: $(allPlatformsLink[platformId]).html()
+        });
+    }
 
     $("#publication-by-selected").click();
     // $("#publication-by-date").click();
